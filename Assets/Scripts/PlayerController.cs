@@ -1,21 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     float speed = 0;
 
+    [SerializeField]
+    TextMeshProUGUI countText;
+
+    [SerializeField]
+    GameObject winTextObject;
+
     Rigidbody rb;
     float movementX;
     float movementY;
+    int count;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        SetCountText();
+        winTextObject.SetActive(false);
     }
 
     void FixedUpdate()
@@ -36,6 +45,17 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("pickup"))
         {
             other.gameObject.SetActive(false);
+            count++;
+            SetCountText();
+        }
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+        if(count >= 12)
+        {
+            winTextObject.SetActive(true);
         }
     }
 }
