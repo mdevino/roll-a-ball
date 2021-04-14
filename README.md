@@ -1,6 +1,6 @@
 # Roll A Ball
 
-Project created by following this [Unity tutorial](https://learn.unity.com/project/roll-a-ball).
+Project created by following this [Unity tutorial](https://learn.unity.com/project/roll-a-ball). The game is available at [Unity Play](https://play.unity.com/mg/other/roll-a-ball-151).
 
 
 ## Notes
